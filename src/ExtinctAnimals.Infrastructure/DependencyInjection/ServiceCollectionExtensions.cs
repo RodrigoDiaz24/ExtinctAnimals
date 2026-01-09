@@ -23,7 +23,8 @@ namespace ExtinctAnimals.Infrastructure.DependencyInjection
                 var options = serviceProvider.GetRequiredService<IOptions<ExtinctAnimalsApiOptions>>().Value;
                 client.BaseAddress = new Uri(options.BaseUrl);
             });
-            // Register repositories
+
+            // Register repositories and services
             services.AddScoped<IAnimalRepository, AnimalRepository>();
             services.AddScoped<IAnimalService, AnimalService>();
 
